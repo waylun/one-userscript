@@ -1,3 +1,4 @@
+alert('123')
 createButton();
 
 const ob = new MutationObserver((_muta, me) => {
