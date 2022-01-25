@@ -1,8 +1,9 @@
+createButton();
+
 const ob = new MutationObserver((_muta, me) => {
     let el = document.querySelector('.proof-factor-cb-overlay')
     if (el) {
         document.querySelector('.proof-factor-cb-overlay').style.zIndex = '2147483645'
-        createButton();
         document.getElementById('capture').addEventListener("click", ()=>{
             capture('BOX');
         });
@@ -16,7 +17,6 @@ const ob2 = new MutationObserver((_muta, me) => {
     let el = document.querySelector('.proof-factor-fw-container')
     if (el) {
         document.querySelector('.proof-factor-fw-container').style.zIndex = '2147483645'
-        createButton();
         document.getElementById('capture').addEventListener("click", ()=>{
             capture('FW');
         });
