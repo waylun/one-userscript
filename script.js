@@ -1,18 +1,14 @@
-const fxdiv = document.createElement('div')
-fxdiv.id = 'fxdiv'
-fxdiv.style = 'position:fixed; bottom:0; right:200px; z-index:2147483646;'
-document.body.appendChild(fxdiv)
-var button = document.createElement('button')
-button.innerHTML = 'CAPTURE SCREENSHOT'
-button.id = 'capture'
-button.style.padding = '10px'
-const theDiv = document.getElementById('fxdiv')
-theDiv.append(button)
+var SB_CB_width = ONE.SB_CB_width,
+    SB_CB_height = ONE.SB_CB_height,
+    SB_CB_scale = ONE.SB_CB_scale,
+    FW_width = ONE.FW_width,
+    FW_height = ONE.FW_height
 
 const ob = new MutationObserver((_muta, me) => {
     let el = document.querySelector('.proof-factor-cb-overlay')
     if (el) {
         document.querySelector('.proof-factor-cb-overlay').style.zIndex = '2147483645'
+        createButton();
         document.getElementById('capture').addEventListener("click", ()=>{
             capture('BOX');
         });
@@ -26,6 +22,7 @@ const ob2 = new MutationObserver((_muta, me) => {
     let el = document.querySelector('.proof-factor-fw-container')
     if (el) {
         document.querySelector('.proof-factor-fw-container').style.zIndex = '2147483645'
+        createButton();
         document.getElementById('capture').addEventListener("click", ()=>{
             capture('FW');
         });
@@ -35,9 +32,21 @@ const ob2 = new MutationObserver((_muta, me) => {
 });
 ob2.observe(document, { childList: true, subtree: true });
 
+function createButton() {
+    const fxdiv = document.createElement('div')
+    fxdiv.id = 'fxdiv'
+    fxdiv.style = 'position:fixed; bottom:0; right:200px; z-index:2147483646;'
+    document.body.appendChild(fxdiv)
+    var button = document.createElement('button')
+    button.innerHTML = 'CAPTURE SCREENSHOT'
+    button.id = 'capture'
+    button.style.padding = '10px'
+    const theDiv = document.getElementById('fxdiv')
+    theDiv.append(button)
+}
+
 function capture(type) {
     let screen
-    let buttonFix
     if(type === 'FW') {
         screen = document.querySelector('.proof-factor-fw-box')
         document.querySelector('.proof-factor-fw-button').style.marginTop = '1em';
