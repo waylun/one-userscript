@@ -1,3 +1,4 @@
+console.log('qqqqqqqqqqwwwww')
 createButton();
 
 const ob = new MutationObserver((_muta, me) => {
