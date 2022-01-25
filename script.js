@@ -1,9 +1,3 @@
-var SB_CB_width = ONE.SB_CB_width,
-    SB_CB_height = ONE.SB_CB_height,
-    SB_CB_scale = ONE.SB_CB_scale,
-    FW_width = ONE.FW_width,
-    FW_height = ONE.FW_height
-
 const ob = new MutationObserver((_muta, me) => {
     let el = document.querySelector('.proof-factor-cb-overlay')
     if (el) {
@@ -52,7 +46,7 @@ function capture(type) {
         document.querySelector('.proof-factor-fw-button').style.marginTop = '1em';
     } else {
         screen = document.querySelector('.proof-factor-cb-prompt-content')
-        screen.style.transform = `scale(${SB_CB_scale})`;
+        screen.style.transform = `scale(${ONE.SB_CB_scale})`;
         document.querySelector('.proof-factor-cb-subscribe-button').style.marginTop = '1em';
     }
 
@@ -65,7 +59,7 @@ function capture(type) {
     wrapper.style.alignItems = 'center';
 
     if(type === 'FW') {
-        domtoimage.toPng(wrapper, { width: FW_width, height: FW_height})
+        domtoimage.toPng(wrapper, { width: ONE.FW_width, height: ONE.FW_height})
             .then(function (dataUrl) {
             var link = document.createElement('a');
             link.download = getFormattedTime() + '.png';
@@ -73,7 +67,7 @@ function capture(type) {
             link.click();
         });
     } else {
-        domtoimage.toPng(wrapper, { width: SB_CB_width, height: SB_CB_height})
+        domtoimage.toPng(wrapper, { width: ONE.SB_CB_width, height: ONE.SB_CB_height})
             .then(function (dataUrl) {
             var link = document.createElement('a');
             link.download = getFormattedTime() + '.png';
