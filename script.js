@@ -1,10 +1,14 @@
 $(document).ready(function () {
+
+// global variables
 const ONE = unsafeWindow?.ONE || null
-const SB_CB_width = ONE.SB_CB_width || 690
-const SB_CB_height = ONE.SB_CB_height || 567
-const SB_CB_scale = ONE.SB_CB_scale || 0.9
-const FW_width = ONE.FW_width || 1200
-const FW_height = ONE.FW_height || 976
+    
+const SB_CB_width = ONE?.SB_CB_width || 690
+const SB_CB_height = ONE?.SB_CB_height || 567
+const SB_CB_scale = ONE?.SB_CB_scale || 0.9
+const FW_width = ONE?.FW_width || 1200
+const FW_height = ONE?.FW_height || 976
+    
 createButton();
 
 const ob = new MutationObserver((_muta, me) => {
