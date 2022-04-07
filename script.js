@@ -1,5 +1,5 @@
-$(document).ready(function (ONE = null) {
-    
+$(document).ready(function () {
+const ONE = unsafeWindow?.ONE || null
 const SB_CB_width = ONE.SB_CB_width || 690
 const SB_CB_height = ONE.SB_CB_height || 567
 const SB_CB_scale = ONE.SB_CB_scale || 0.9
