@@ -1,3 +1,9 @@
+const SB_CB_width = ONE.SB_CB_width || 690
+const SB_CB_height = ONE.SB_CB_height || 567
+const SB_CB_scale = ONE.SB_CB_scale || 0.9
+const FW_width = ONE.FW_width || 1200
+const FW_height = ONE.FW_height || 976
+
 createButton();
 
 const ob = new MutationObserver((_muta, me) => {
@@ -35,6 +41,7 @@ function createButton() {
     button.innerHTML = 'CAPTURE SCREENSHOT'
     button.id = 'capture'
     button.style.padding = '10px'
+    button.style.opacity = '0.8'
     const theDiv = document.getElementById('fxdiv')
     theDiv.append(button)
 }
@@ -46,7 +53,7 @@ function capture(type) {
         document.querySelector('.proof-factor-fw-button').style.marginTop = '1em';
     } else {
         screen = document.querySelector('.proof-factor-cb-prompt-content')
-        screen.style.transform = `scale(${ONE.SB_CB_scale})`;
+        screen.style.transform = `scale(${SB_CB_scale})`;
         document.querySelector('.proof-factor-cb-subscribe-button').style.marginTop = '1em';
     }
 
@@ -59,7 +66,7 @@ function capture(type) {
     wrapper.style.alignItems = 'center';
 
     if(type === 'FW') {
-        domtoimage.toPng(wrapper, { width: ONE.FW_width, height: ONE.FW_height})
+        domtoimage.toPng(wrapper, { width: FW_width, height: FW_height})
             .then(function (dataUrl) {
             var link = document.createElement('a');
             link.download = getFormattedTime() + '.png';
@@ -67,7 +74,7 @@ function capture(type) {
             link.click();
         });
     } else {
-        domtoimage.toPng(wrapper, { width: ONE.SB_CB_width, height: ONE.SB_CB_height})
+        domtoimage.toPng(wrapper, { width: SB_CB_width, height: SB_CB_height})
             .then(function (dataUrl) {
             var link = document.createElement('a');
             link.download = getFormattedTime() + '.png';
