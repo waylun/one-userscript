@@ -196,7 +196,7 @@ $(document).ready(function () {
     const fxdiv_1 = document.createElement("div");
     fxdiv_1.id = "fxdiv_1";
     fxdiv_1.style =
-      "position:fixed; bottom:0; right:200px; z-index:2147483646;";
+      "position:fixed; bottom:0; right:200px; z-index:2147483646;background:black;color:white;curson:pointer;padding:5px;";
     document.body.appendChild(fxdiv_1);
     var button_1 = document.createElement("button_1");
     button_1.innerHTML = "CAPTURE SCREENSHOT";
