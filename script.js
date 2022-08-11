@@ -262,6 +262,10 @@ $(document).ready(function () {
       wrapper.style.justifyContent = "center";
       wrapper.style.alignItems = "center";
 
+      // remove branding since it will cause the error for capturing
+      const branding = document.querySelector(".proof-factor-cb-prompt-branding")
+      branding && branding.remove();
+
       if (type === "FW") {
         domtoimage
           .toPng(wrapper, {
