@@ -273,6 +273,8 @@ $(document).ready(function () {
             link.download = getFormattedTime() + ".png";
             link.href = dataUrl;
             link.click();
+          }).catch((e) => {
+            console.log("FW error", e);
           });
       } else {
         domtoimage
@@ -285,6 +287,8 @@ $(document).ready(function () {
             link.download = getFormattedTime() + ".png";
             link.href = dataUrl;
             link.click();
+          }).catch(e => {
+              console.log('BOX error', e)
           });
       }
     }
