@@ -127,7 +127,7 @@ $(document).ready(function () {
           "",
         rating: ee[i].dataset.rating,
         posted: ep[i].innerHTML.trim(),
-        page: eg.innerHTML,
+        page: eg && eg.innerHTML || "1",
       });
     }
 
