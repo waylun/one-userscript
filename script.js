@@ -253,10 +253,10 @@ $(document).ready(function () {
         document.querySelector(
           ".proof-factor-cb-subscribe-button"
         ).style.marginTop = "1em";
-        const phoneInput = document.querySelector(".proof-factor-cb-phone-input");
-        const emailInput = document.querySelector(".proof-factor-cb-prompt-input-email");
-        if (phoneInput && emailInput) {
-          emailInput.style.marginTop = "0.8em";
+
+        const inputsLength = document.querySelectorAll('.proof-factor-cb-input-field')?.length
+        if(inputsLength > 1) {
+          document.querySelectorAll('.proof-factor-cb-input-field div')[inputsLength - 1].style.marginTop = '0.8em'
         }
       }
 
