@@ -314,4 +314,4 @@ $(document).ready(function () {
       return y + "-" + m + "-" + d + "-" + h + "-" + mi + "-" + s;
     }
   } // end of screenshotScript()
-}); // end of document.ready()
+}); // end of document.ready() 
