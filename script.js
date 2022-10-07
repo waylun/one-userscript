@@ -256,7 +256,7 @@ $(document).ready(function () {
 
         const inputsLength = document.querySelectorAll('.proof-factor-cb-input-field')?.length
         if(inputsLength > 1) {
-          document.querySelectorAll('.proof-factor-cb-input-field div')[inputsLength - 1].style.marginTop = '0.8em'
+          document.querySelectorAll('.proof-factor-cb-input-field div')[inputsLength - 1].style.marginTop = '1em'
         }
       }
 
