@@ -249,9 +249,15 @@ $(document).ready(function () {
       } else {
         screen = document.querySelector(".proof-factor-cb-prompt-content");
         screen.style.transform = `scale(${SB_CB_scale})`;
+        // fix smushes bug
         document.querySelector(
           ".proof-factor-cb-subscribe-button"
         ).style.marginTop = "1em";
+        const phoneInput = document.querySelector(".proof-factor-cb-phone-input");
+        const emailInput = document.querySelector(".proof-factor-cb-prompt-input-email");
+        if (phoneInput && emailInput) {
+          emailInput.style.marginTop = "1em";
+        }
       }
 
       var parent = screen.parentNode;
