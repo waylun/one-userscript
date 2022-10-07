@@ -256,7 +256,7 @@ $(document).ready(function () {
         const phoneInput = document.querySelector(".proof-factor-cb-phone-input");
         const emailInput = document.querySelector(".proof-factor-cb-prompt-input-email");
         if (phoneInput && emailInput) {
-          emailInput.style.marginTop = "1em";
+          emailInput.style.marginTop = "0.8em";
         }
       }
 
