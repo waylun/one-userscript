@@ -244,8 +244,14 @@ $(document).ready(function () {
       let screen;
       if (type === "FW") {
         screen = document.querySelector(".proof-factor-fw-box");
+        // fix smushes bug
         document.querySelector(".proof-factor-fw-button").style.marginTop =
           "1em";
+
+        const inputsLength = document.querySelectorAll('.proof-factor-fw-input-field')?.length
+        if(inputsLength > 1) {
+          document.querySelectorAll('.proof-factor-fw-input-field div')[inputsLength - 1].style.marginTop = '1em'
+        }
       } else {
         screen = document.querySelector(".proof-factor-cb-prompt-content");
         screen.style.transform = `scale(${SB_CB_scale})`;
